@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: arial;
+    box-sizing: border-box;
+}
+body {
+    background-color: black;
+    color: white
+}
+
+/* NAV BAR */
+.mynavcontainer {
+    padding: 10px 10px;
+    /* margin-right: 10px; */
+}
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.mylogo {
+    width: 140px;
+
+}
+nav ul li {
+    display: none;
+    list-style: none;
+    margin: 10px 20px;
+
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+.login-image {
+    float: right;
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+.login-image img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: white 0px 4px 10px;
+}
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    background: blue;
+    width: 0px;
+    height: 3px;
+    left: 0;
+    bottom: -5px;
+    transition: .5s;
+    }
+nav ul li a:hover::after {
+    width: 100%;
+}
+.toggle-btn {
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding-right: 2rem;
+    display: block;
+}
+/* SMALLER SCREENS */
+.mysignup-container {
+    margin-left: 40px;
+    border-left: 10px solid blue;
+    padding-left: 10px;
+    margin-top: 20px;
+}
+form label {
+    font-size: 20px;
+    color: steelblue;
+    font-weight: bold;
+}
+button[type=submit] {
+    padding: 10px;
+    color: green;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+button[type=submit]:hover {
+    background-color: green;
+    color: white;
+}
+.no-account {
+    margin-left: 60px;
+    margin-top: 20px;
+}
+.no-account p {
+    font-weight: bold;
+    font-size: 17px;
+}
+.no-account a   {
+    font-weight: bold;
+    font-size: 17px;
+}
+input[type=text] {
+    padding: 5px;
+    border-radius: 5px;
+}
+input[type=text]:hover {
+    border: solid blue;
+}
+input #remember-me {
+    padding: 100px;
+}
+@media only screen and (max-width:280px) {
+    nav {
+        flex-wrap: nowrap;
+    }
+    .mysignup-container {
+        margin-left: 20px;
+        padding-left: 20px;
+        margin-top: 20px;
+    }
+    .no-account {
+        margin-left: 10px;
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    nav ul li {
+        display: inline-block;
+        list-style: none;
+        margin: 10px 20px;
+    }
+    .toggle-btn {
+        display: none;
+    }
+    .mysignup-container {
+        margin-top: 30px;
+    }
+    .mysignup-container h2 {
+        font-size: 70px;
+    }
+    form label {
+        font-size: 50px;
+    }
+    input[type=text] {
+        padding: 15px;
+        width: 55%;
+    }
+    input[type=checkbox] {
+        padding: 150px;
+    }
+    .no-account p {
+        font-weight: bold;
+        font-size: 30px;
+    }
+    .no-account a {
+        font-weight: bold;
+        font-size: 30px;
+    }
+}
+@media only screen and (min-width:1024px){
+    .mysignup-container {
+        margin-top: 50px;
+
+    }
+    form label {
+        font-size: 20px;
+    }
+    input[type=text] {
+        padding: 5px;
+        width: 30%;
+    }
+}
+/* My dropdowns */
+.dropdwncontainer {
+    position: relative;
+    display: inline-block;
+}
+.dropdwn-content {
+    display: none;
+    position: absolute;
+    background-color: whitesmoke;
+    min-width: 120px;
+    box-shadow: 0 2px 5px;
+    margin-top: 30px;
+    z-index: 1;
+}
+.dropdwn-content a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+}
+.dropdwn-content a:hover {
+    background-color: skyblue;
+}
+
+
+

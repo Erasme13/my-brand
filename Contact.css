@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: black;
+    color: white;
+}
+/* small screens */
+.contactheader {
+    margin-left: 20px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.contactheader h1 {
+    font-weight: bold;
+    color: rgb(175, 162, 169);
+    margin-bottom: 10px;
+}
+.contactheader p {
+    font-size: 19px;
+}
+.contactform {
+    display: inline-block;
+    /* justify-content: center;
+    align-items: center; */
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 10px;
+    border: solid rgb(39, 154, 241);
+}
+.contactform label {
+    font-size: 20px;
+}
+.contactform input {
+    padding: 10px;
+    width: 100%;
+}
+.contactform textarea {
+    padding: 20px;
+    width: 100%;
+    resize: vertical;
+}
+div .mybuttons {
+    display: flex;
+    justify-content: space-between;
+}
+.mybuttons button[type=reset] {
+    padding: 5px;
+    background-color: blue;
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+}
+.mybuttons button[type=submit] {
+    padding: 5px;
+    background-color: green;
+    color: white;
+    border: none;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 5px;
+    margin-right: 25px;
+}
+@media only screen and (min-width: 768px) {
+    .contactform {
+        max-width: 100%;
+        width: 90%;
+    }
+    .contactheader h1 {
+        font-weight: bold;
+        color: rgb(175, 162, 169);
+        margin-bottom: 10px;
+        font-size: 4rem;
+    }
+    .contactheader p {
+        font-size: 28px;
+    }
+}
+@media only screen and (min-width: 1024px) {
+    .contactheader {
+        text-align: center;
+        margin-top: 10%;
+    }
+    .contactform  {
+        width: 50%;
+        margin-left: 25%;
+        margin-bottom: 10%;
+    }
+
+
+
+}
+
+
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login page</title>
+    <link rel="stylesheet" href="login page.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="mynavcontainer">
+        <nav>
+           <a href="index.html"><img src="ERASME no background.png" alt="my logo" class="mylogo"></a> 
+            <ul class="navlinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contact me.html">Contact me</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="Portfolio page.html">Portfolio</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>   
+            <!-- <div class="signup"><a href="#signup">Signup</a></div> -->
+            <div class="dropdwncontainer">
+                <div class="login-image">
+                   <img src="HOZIYANA Erasme-no background.png" alt="user's image">
+                </div>
+                <div class="dropdwn-content" id="dropdown">
+                    <a href="signup.html">User</a>
+                    <a href="#adminlogin">Admin</a>
+                </div> 
+            </div>
+            <div class="toggle-btn">&#9776;</div>
+        </nav>
+    </div>
+    <!-- Menu for small screens -->
+    <div class="mymenu">
+        <li><a href="index.html">Home</a></li>
+                <li><a href="contact me.html">Contact me</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="Portfolio page.html">Portfolio</a></li>
+                <li><a href="about.html">About</a></li>
+                <li> <div class="dropdwncontainer2">
+                            <div class="login-image">
+                            <img src="HOZIYANA Erasme-no background.png" alt="user's image">
+                            </div>
+                            <div class="dropdwn-content2" id="dropdown2">
+                                <a href="signup.html">User</a>
+                                <a href="#adminlogin">Admin</a>
+                            </div> 
+                     </div>
+               </li>
+    </div>
+   
+    <div class="mylogin-container">
+        <h2>Login</h2><br><br>
+        <form id="mylogin-form" action="login.php" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br><br>
+            <label for="password">Password:</label>
+            <input type="text" id="password" name="password" required><br><br><br>
+            <div>
+                <input type="checkbox" id="remember-me" name="remember-me">
+                <label for="remember-me">Remember me</label><br><br><br>
+            </div>
+            <button type="submit">Submit</button><br>
+        </form>
+    </div>
+    <div class="no-account">
+        <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+    </div>
+
+
+
+
+    <script src="scripts.js"></script>
+</body>
+</html>

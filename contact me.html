@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact me</title>
+    <link rel="stylesheet" href="Contact.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="mynavcontainer">
+        <nav>
+           <a href="index.html"><img src="ERASME no background.png" alt="my logo" class="mylogo"></a> 
+            <ul class="navlinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contact me.html">Contact me</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="Portfolio page.html">Portfolio</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>   
+            <!-- <div class="signup"><a href="#signup">Signup</a></div> -->
+            <div class="dropdwncontainer">
+                <div class="login-image">
+                   <img src="HOZIYANA Erasme-no background.png" alt="user's image">
+                </div>
+                <div class="dropdwn-content" id="dropdown">
+                    <a href="signup.html">User</a>
+                    <a href="#adminlogin">Admin</a>
+                </div> 
+            </div>
+            <div class="toggle-btn">&#9776;</div>
+        </nav>
+    </div>
+    <!-- Menu for small screens -->
+    <div class="mymenu">
+        <li><a href="index.html">Home</a></li>
+                <li><a href="contact me.html">Contact me</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="Portfolio page.html">Portfolio</a></li>
+                <li><a href="about.html">About</a></li>
+                <li> <div class="dropdwncontainer2">
+                            <div class="login-image">
+                            <img src="HOZIYANA Erasme-no background.png" alt="user's image">
+                            </div>
+                            <div class="dropdwn-content2" id="dropdown2">
+                                <a href="signup.html">User</a>
+                                <a href="#adminlogin">Admin</a>
+                            </div> 
+                     </div>
+               </li>
+    </div>
+    
+    <div class="contactheader">
+        <h1>GET IN TOUCH</h1>
+        <p><b>Phone:</b> <a href="tel:+250783967092">(+250)783967092</a><br>
+            <b>Email:</b> <a href="mailto:hozerasme2@gmail.com">hozerasme2@gmail.com</a><br> 
+            <span>You can even text me directly through the given form below:</span>
+        </p> 
+    </div>
+    <div class="contactform">
+        <form action="contact.php" method="post">
+            <label for="firstname">First name:</label>
+            <input type="text" id="firstname" name="firstname" placeholder="type your first name here" required><br><br>
+            <label for="lastname">Last name:</label>
+            <input type="text" id="lastname" name="lastname" placeholder="type your last name here" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Type your email here" required><br><br>
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" placeholder="type your phone number here" required><br><br>
+            <label for="message">Message:</label>
+            <textarea type="text" id="message" placeholder="Type your message here" required></textarea><br><br>
+                <div class="mybuttons">
+                    <button type="reset">Reset</button>
+                    <button type="Submit">Submit</button>
+                </div>
+            
+
+        </form>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
