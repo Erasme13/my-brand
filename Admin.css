@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.admincontainer {
+    display: flex;
+}
+.mysidebar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 100vh;
+    padding: 5px;
+    color: green;
+    overflow: hidden;
+    transition: all .5s linear;
+    background: lightblue;
+}
+.mysidebar:hover {
+    width: 214px;
+    transition: 0.5s;
+}
+.mylogo {
+    height: 30px;
+    padding: 10px;
+}
+.adminmenu {
+    height: 88%;
+    position: relative;
+    list-style: none;
+    padding: 0;
+}
+.adminmenu li {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 10px;
+    transition: all 0.5 ease-in-out;
+
+}
+.adminmenu li:hover, .active {
+    background: white;
+}
+.adminmenu li a {
+    color: darkblue;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+.adminmenu a span {
+    overflow: hidden;
+}
+.adminmenu a i {
+    font-size: 1.2rem;
+}
+.logout {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+.admincontent {
+    position: relative;
+    background: grey;
+    width: 100%;
+    padding-left: 20px;
+    padding-top: 10px;
+}
