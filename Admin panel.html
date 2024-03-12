@@ -54,19 +54,36 @@
                 </li>
             </ul>
         </div>
-        <div class="admincontent">
-            <div class="admintitle">
-                <h1>DASHBOARD</h1>
-            </div>
-            <div class="user">
-                <div class="searchbox">
-                    <i class="fa-solid fa-search"></i>
-                    <input type="text" placeholder="search">
+           <div class="admincontent">
+                <div class="adminheadercontainer">
+                    <div class="admintitle">
+                    <h1>DASHBOARD</h1>
+                    </div>
+                    <div class="adminheader">
+                        <div class="searchbox">
+                            <i class="fa-solid fa-search"></i>
+                            <input type="text" placeholder="search" id="searchbox">
+                        </div>
+                    </div>
+                        <img src="HOZIYANA Erasme-white background.png">
+                </div>  
+                <div class="performancemetrics">
+                 <h2>Performance metrics</h2>
+                 <ul>
+                     <li>page views: <span id="pageViews">0</span></li>
+                     <li>Unique visitors: <span id="uniqueVisitors">0</span></li>
+                     <li>New visitors: <span id="newVisitors"></span>0</li>
+                 </ul>
                 </div>
-        </div>
-        </div>
+                <div id="activity-feed">
+                    <h2>Recent activity</h2>
+                    <ul id="activity-list">
+
+                    </ul>
+                </div>
+           </div>
     </div>
 
-    
+    <script src="admin.js"></script>
 </body>
 </html>

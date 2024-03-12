@@ -64,8 +64,80 @@
 }
 .admincontent {
     position: relative;
-    background: grey;
+    background: white;
     width: 100%;
     padding-left: 20px;
     padding-top: 10px;
+}
+.adminheadercontainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0,100,160,.3);
+    padding: 25px;
+    /* width: 100%; */
+    margin-right:20px;
+    border-radius: 20px;
+}
+.admintitle h1 {
+    font-weight: bold;
+}
+.searchbox {
+    padding: 10px;
+    border-radius: 10px;
+}
+.searchbox input {
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    width: 50vh;
+
+}
+.imageadmin {
+    border-radius: 50%;
+    background: rgba(0,0,255,.5);
+}
+.adminheadercontainer img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.performancemetrics {
+    /* margin-left: 20px; */
+    margin-top: 20px;
+    /* border: solid blue; */
+    width: 30%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+}
+.performancemetrics li {
+    list-style: none;
+    padding: 10px;
+    padding-left: 0;
+    margin-left: 10px;
+}
+.performancemetrics h2 {
+    padding-left: 0;
+    margin-left: 10px;
+
+}
+#activity-feed {
+    margin-top: 20px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    width: 30%;
+}
+#activity-feed h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+#activity-list {
+    list-style-type: none;
+    padding: 0;
+}
+.activity-item {
+    margin-bottom: 10px;
+}
+.activity-item p {
+    margin: 0;
 }

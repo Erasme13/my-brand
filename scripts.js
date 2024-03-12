@@ -1,5 +1,5 @@
 // My dropdowns
-document.querySelector('.dropdwncontainer').addEventListener ('mouseover', function (){
+document.querySelector('.dropdwncontainer').addEventListener('mouseover', function (){
     document.getElementById('dropdown').style.display = 'block';
 });
 document.querySelector('.dropdwncontainer').addEventListener('mouseout', function() {
@@ -18,4 +18,6 @@ var togglebtn = document.querySelector('.toggle-btn');
 var mymenu = document.querySelector('.mymenu');
 togglebtn.addEventListener('click', () => {
     mymenu.classList.toggle('active');
-})
+});
+
+
