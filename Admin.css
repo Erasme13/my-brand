@@ -110,6 +110,10 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     border-radius: 10px;
 }
+.performancemetrics:hover {
+    border: solid blue;
+    transition: .3 ease-in-out;
+}
 .performancemetrics li {
     list-style: none;
     padding: 10px;
@@ -119,6 +123,7 @@
 .performancemetrics h2 {
     padding-left: 0;
     margin-left: 10px;
+    color: darkblue;
 
 }
 #activity-feed {
@@ -126,10 +131,16 @@
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     width: 30%;
+    border-radius: 10px;
+}
+#activity-feed:hover {
+    border: solid blue;
+    transition: .3s ease-in-out;
 }
 #activity-feed h2 {
     margin-top: 0;
     margin-bottom: 10px;
+    color: darkblue;
 }
 #activity-list {
     list-style-type: none;
