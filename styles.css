@@ -10,6 +10,7 @@
     background-image: url('Dark\ background\ photo.avif');
     background-size: cover;
     background-position: center;
+    width: 100%;
 
 
 }
@@ -89,7 +90,8 @@ nav ul li a:hover::after {
 .myhomecontent {
     margin-top: 10%;
     font-size: 30px;
-    margin-left: 20px;
+    margin-left: 40px;
+    margin-right: 0;
 }
 .myhomecontent h1 {
     color: white;
@@ -193,12 +195,16 @@ transition: .5s ease;
 @media screen and (max-width: 390px) {
     .myhomecontent {
         margin-left: 15px;
+        margin-right: 0;
     }
     .myhomecontent h1 {
-        font-size: 35px;
+        font-size: 30px;
     }
     .myhomecontent p {
-        font-size: 25px;
+        font-size: 20px;
+    }
+    .myhomecontent button {
+        margin-left: 20%;
     }
 
 }
