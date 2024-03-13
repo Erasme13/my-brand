@@ -52,11 +52,11 @@
    
     <div class="mysignup-container">
         <h2>Signup</h2><br><br>
-        <form id="mysignup-form" action="signup.php" method="post">
+        <form id="mysignup-form">
             <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required><br><br><br>
+            <input type="text" id="username" name="username" autocomplete="username" required><br><br><br>
             <label for="password">Password:</label>
-            <input type="text" id="password" name="password" required><br><br><br>
+            <input type="password" id="password" name="password" autocomplete="new-password" required><br><br><br>
             <div>
                 <input type="checkbox" id="remember-me" name="remember-me">
                 <label for="remember-me">Remember me</label><br><br><br>
@@ -67,8 +67,9 @@
     <div class="no-account">
         <p>Already have an account? <a href="login page.html">Login</a></p>
     </div>
+    <!-- action="signup.js"method="POST" -->
 
-
-    <script src="scripts.js"></script>
+    <!-- <script src="scripts.js"></script> -->
+    <script src="signup.js"></script>
 </body>
 </html>
