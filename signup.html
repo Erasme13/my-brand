@@ -50,26 +50,41 @@
                </li>
     </div>
    
-    <div class="mysignup-container">
-        <h2>Signup</h2><br><br>
+    <!-- <div class="mysignup-container"> -->
         <form id="mysignup-form">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" autocomplete="username" required><br><br><br>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" autocomplete="new-password" required><br><br><br>
+            <h2>Signup</h2><br><br>
+            <div class="input-control">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" autocomplete="email" required><br><br><br>
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required><br><br><br>
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required><br><br><br>
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="password">Comfirm password</label>
+                <input type="password" id="password2" name="password2" required><br><br><br>
+                <div class="error"></div>
+            </div>
             <div>
-                <input type="checkbox" id="remember-me" name="remember-me">
-                <label for="remember-me">Remember me</label><br><br><br>
+                <input type="checkbox" id="show-password" name="remember-me">
+                <label for="show-password">Show password</label><br><br><br>
             </div>
             <button type="submit">Submit</button><br>
         </form>
-    </div>
+<!-- </div> -->
     <div class="no-account">
         <p>Already have an account? <a href="login page.html">Login</a></p>
     </div>
-    <!-- action="signup.js"method="POST" -->
 
-    <!-- <script src="scripts.js"></script> -->
+    <script src="scripts.js"></script>
     <script src="signup.js"></script>
 </body>
 </html>
