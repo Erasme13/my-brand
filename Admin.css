@@ -63,6 +63,7 @@
     width: 100%;
 }
 .admincontent {
+    /* display: none; */
     position: relative;
     background: white;
     width: 100%;
@@ -110,6 +111,16 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     border-radius: 10px;
 }
+.performancemetrics #activity-feed {
+    margin-top: 20px;
+    padding: 20px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); */
+    width: 30%;
+    border-radius: 10px;
+    width: 100%;
+    border: none;
+
+}
 .performancemetrics:hover {
     border: solid blue;
     transition: .3 ease-in-out;
@@ -126,17 +137,6 @@
     color: darkblue;
 
 }
-#activity-feed {
-    margin-top: 20px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-    width: 30%;
-    border-radius: 10px;
-}
-#activity-feed:hover {
-    border: solid blue;
-    transition: .3s ease-in-out;
-}
 #activity-feed h2 {
     margin-top: 0;
     margin-bottom: 10px;
@@ -151,4 +151,60 @@
 }
 .activity-item p {
     margin: 0;
+}
+.profile-tab {
+    /* display: none; */
+    width: 40%;
+    background-color: whitesmoke;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    margin-top: 20px;
+    border-radius: 5px;
+}
+.profile-tab h1 {
+    color: darkblue;
+}
+.profile-tab input {
+    width: 100%;
+    border-radius: 4px;
+    padding: 5px;
+    border: 0;
+    border-bottom: 1px solid darkblue;
+    outline: none;
+
+}
+.profile-tab button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: green;
+    color: white;
+    font-family: montserrat;
+    font-weight: bold;
+    font-size: 1rem;
+}
+.profile-tab button:hover {
+    background-color: white;
+    color: black;
+}
+.messages {
+    /* display: none; */
+    width: 40%;
+    padding: 30px;
+    background-color: whitesmoke;
+    height: auto;
+    margin-top: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    
+}
+.Users-info {
+    /* display: none; */
+    width: 40%;
+    padding: 30px;
+    background-color: whitesmoke;
+    height: auto;
+    margin-top: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+.settings {
+    /* display: none; */
 }

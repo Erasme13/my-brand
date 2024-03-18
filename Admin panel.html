@@ -17,31 +17,31 @@
             </div>
             <ul class="adminmenu">
                 <li class="active">
-                    <a href="">
+                    <a onclick="tabs(0)" class="tab">
                         <i class="fas fa-tachometer-alt"></i>
                         <span>DASHBOARD</span>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a onclick="tabs(1)" class="tab">
                         <i class="fa fa-user"></i>
                         <span>Profile</span>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a onclick="tabs(2)" class="tab">
                         <i class="fa fa-message"></i>
                         <span>Messages</span>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a onclick="tabs(3)" class="tab">
                         <i class="fa fa-user-circle"></i>
                         <span>Users</span>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a onclick="tabs(4)" class="tab">
                         <i class="fa fa-cog"></i>
                         <span>Settings</span>
                     </a>
@@ -67,20 +67,50 @@
                     </div>
                         <img src="HOZIYANA Erasme-white background.png">
                 </div>  
-                <div class="performancemetrics">
+                <div class="performancemetrics tab-panel">
                  <h2>Performance metrics</h2>
                  <ul>
                      <li>page views: <span id="pageViews">0</span></li>
                      <li>Unique visitors: <span id="uniqueVisitors">0</span></li>
                      <li>New visitors: <span id="newVisitors"></span>0</li>
                  </ul>
+                 <div id="activity-feed">
+                     <h2>Recent activity</h2>
+                     <ul id="activity-list">
+ 
+                     </ul>
+                 </div>
                 </div>
-                <div id="activity-feed">
-                    <h2>Recent activity</h2>
-                    <ul id="activity-list">
+                <div class="profile-tab tab-panel">
+                    <h1>Personal info</h1>
+                    <h2>Full name</h2>
+                    <input type="text" id="name" value="Hoziyana Erasme">
+                    <h2>Birthday</h2>
+                    <input type="text" id="Birthday" value="23.03.1980">
+                    <h2>Gender</h2>
+                    <input type="text" id="gender" value="Male">
+                    <h2>Email</h2>
+                    <input type="email" id="email" value="hozerasme100@gmail.com">
+                    <h2>Username</h2>
+                    <input type="text" id="username" value="Erasme">
+                    <h2>Password</h2>
+                    <input type="password" id="Password" value="Asdfghj8@">
+                    <button class="btn">Update</button>
+                </div>
+                <div class="messages tab-panel">
+                    <h2>Messages</h2>
+                </div>
+                <div class="Users-info tab-panel">
+                    <h2>Users info</h2>
+                </div>
+                <div class="settings tab-panel">
+                    <h1>Privacy settings</h1>
+                    <h2>Manage email notifications</h2>
+                    <h2>Manage privacy settings</h2>
+                    <h2>View terms of users</h2>
+                    <h2>Protect account</h2>
+                </div>
 
-                    </ul>
-                </div>
            </div>
     </div>
 

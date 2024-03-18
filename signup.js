@@ -40,11 +40,13 @@ document.addEventListener('DOMContentLoaded', function(){
         let isValid = true;
 
     if (localStorage.getItem(usernameValue)) {
-        setError(username, "Username is already taken")
+        // setError(username, "Username is already taken")
+        alert('This username is already registered')
         isValid = false; 
     }
     if (localStorage.getItem(emailValue)){
-        setError(email, "This email is already registered");
+        // setError(email, "This email is already registered");
+        alert('This email is already registered')
         isValid = false;
     }
     
@@ -54,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function(){
     }else if (!validUser(usernameValue)) {
         setError(username, "digits are not allowed")
         isValid = false;
-    }else {
+    }else { 
         setSuccess(username)
     }
 

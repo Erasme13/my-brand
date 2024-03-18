@@ -1,8 +1,8 @@
 
 // Performance metrics
-var pageViews = 500;
-var uniqueVisitors = 200;
-var newVisitors = 10;
+var pageViews = 0;
+var uniqueVisitors = 0;
+var newVisitors = 0;
 function updatePerformanceMetrics() {
     document.getElementById('pageViews').textContent = pageViews;
     document.getElementById('uniqueVisitors').textContent = uniqueVisitors;
@@ -35,7 +35,7 @@ generateActivityFeed ();
 function trackActivity(activity) {
     var activities = JSON.parse(localStorage.getItem('activities')) || [];
     activities.push(activity);
-    Storage.setItem('activities', JSON.stringify(activities));
+    localStorage.setItem('activities', JSON.stringify(activities));
 }
 trackActivity();
 
@@ -52,3 +52,20 @@ activities.forEach(function(activity){
 });
 }
 displayActivities();
+
+
+const tabBtn = document.querySelectorAll('.tab');
+const tab = document.querySelectorAll('.tab-panel');
+
+function tabs(panelIndex) {
+    tab.forEach(function(node){
+        node.style.display ='none';
+        tabBtn.forEach(function(btn) {
+            btn.parentElement.classList.remove('active');
+        });
+        tabBtn[panelIndex].parentElement.classList.add('active');
+    });
+    tab[panelIndex].style.display ='block';
+}
+tabs(0);
+
