@@ -25,30 +25,34 @@
                    <img src="HOZIYANA Erasme-no background.png" alt="user's image">
                 </div>
                 <div class="dropdwn-content" id="dropdown">
-                    <a href="signup.html">User</a>
-                    <a href="#adminlogin">Admin</a>
+                    <a href="login page.html">Logout</a>
+                    <!-- <a href="#adminlogin">Admin</a> -->
                 </div> 
             </div>
-            <div class="toggle-btn">&#9776;</div>
+            <div class="toggle-btn" onclick="openNav()">&#9776;</div>
         </nav>
     </div>
-    <!-- Menu for small screens -->
-    <div class="mymenu">
-        <li><a href="index.html">Home</a></li>
-                <li><a href="contact me.html">Contact me</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="Portfolio page.html">Portfolio</a></li>
-                <li><a href="about.html">About</a></li>
-                <li> <div class="dropdwncontainer2">
-                            <div class="login-image">
-                            <img src="HOZIYANA Erasme-no background.png" alt="user's image">
-                            </div>
-                            <div class="dropdwn-content2" id="dropdown2">
-                                <a href="signup.html">User</a>
-                                <a href="#adminlogin">Admin</a>
-                            </div> 
-                     </div>
-               </li>
+     <!-- Menu for small screens -->
+     <div class="mymenu" id="myNav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <li><a href="index.html">Home</a></li>
+             <li><a href="contact me.html">Contact me</a></li>
+             <li><a href="blog.html">Blog</a></li>
+             <li><a href="Portfolio page.html">Portfolio</a></li>
+             <li><a href="about.html">About</a></li>
+             <li> <div class="dropdwncontainer2">
+                         <div class="login-image">
+                         <img src="HOZIYANA Erasme-no background.png" alt="user's image">
+                         </div>
+                         <div class="dropdwn-content2" id="dropdown2">
+                             <a href="signup.html">Signup</a>
+                             <a href="Admin panel.html">Login</a>
+                         </div> 
+                 </div>
+         </li>
+
+        </div>
     </div>
    
     <div class="mytitle">
@@ -60,14 +64,14 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quibusdam blanditiis nesciunt asperiores ut corporis, odio aliquid illum nisi itaque temporibus veniam perspiciatis aperiam assumenda quaerat nihil est beatae deserunt?
             </p>
             <div class="reachme">
-                <i class="fab fa-whatsapp"></i>
-                <i class="fab fa-facebook"></i>
-                <i class="fab fa-x"></i>
-                <i class="fab fa-linkedin"></i>
+               <a href=""><i class="fab fa-whatsapp"></i></a> 
+                <a href=""><i class="fab fa-facebook"></i></a>
+                <a href=""><i class="fab fa-x"></i></a>
+               <a href=""><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
         <div class="prt-col-2">
-            <img src="HOZIYANA Erasme-no background.png" alt="my photo">
+            <img src="Erasme new ph.jpg" alt="my photo">
         </div>
         <div class="prt-col-3">
             <h2>My professional skills</h2>
@@ -82,6 +86,11 @@
         </div>
         
 
+    </div>
+    <div class="myfooter">
+        <footer>
+            <p>&copy; 2024 HOZIYANA Erasme. All rights reserved.</p>
+        </footer>
     </div>
 <script src="scripts.js"></script>
 </body>

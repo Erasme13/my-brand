@@ -188,13 +188,31 @@
 }
 .messages {
     /* display: none; */
-    width: 40%;
+    width: 99%;
     padding: 30px;
     background-color: whitesmoke;
     height: auto;
+    border-radius: 20px;
     margin-top: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     
+}
+#customers-msg td {
+    display: none;
+}
+#customers-msg {
+    border-collapse: collapse;
+    width: 100%;
+}
+#customers-msg td, #customers-msg th {
+    border: 2px solid blue;
+    padding: 20px;
+}
+#customers-msg th {
+    text-align: left;
+    background-color: yellowgreen;
+    color: #ffff;
+    font-size: 1.5rem;
 }
 .Users-info {
     /* display: none; */
@@ -206,5 +224,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 .settings {
-    /* display: none; */
+    width: 40%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    background-color: whitesmoke;
 }

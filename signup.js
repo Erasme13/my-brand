@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function(){
     let email = document.getElementById('email');
     let password = document.getElementById('password');
     let password2 = document.getElementById('password2');
+    let signupRole = document.getElementById('signup-role');
 
     
     const setError = (el, message) => {
@@ -29,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function(){
     
     };
     const validPassword = (p) => {
-        const regex = /^(?=.*\p{Ll})(?=.*\p{Lu})(?=.*[\d|@#$!%*?&])[\p{L}\d@#$!%*?&]{8,96}$/gmu;;
+        const regex = /^(?=.*\p{Ll})(?=.*\p{Lu})(?=.*[\d|@#$!%*?&])[\p{L}\d@#$!%*?&]{8,96}$/gmu;
         return regex.test(p);
     }
     const validUser = (u) => {
@@ -90,21 +91,36 @@ document.addEventListener('DOMContentLoaded', function(){
     return isValid;
 };
 
-        myForm.addEventListener('submit', (event) => {
+        myForm.addEventListener('submit', async (event) => {
             event.preventDefault();
         const usernameValue = username.value.trim();
         const emailValue = email.value.trim();
         const passwordValue = password.value.trim();
         const password2Value = password2.value.trim();
+        const roleValue = signupRole.value;
            if (validateInputs(usernameValue, emailValue, passwordValue, password2Value)) {
-        const userData = {username: usernameValue, email: emailValue, password: passwordValue};
-              localStorage.setItem(usernameValue, JSON.stringify(userData));
-              localStorage.setItem(emailValue, JSON.stringify(userData));
-              alert ("Signup completed! pleaase login")
-              window.location.href = "login page.html";
-              myForm.reset();
-           }
-        
-        });
-    
+        const userData = {username: usernameValue, email: emailValue, password: passwordValue, role: roleValue};
+        try {
+            const response = await fetch('/api/signup', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(userData)
+            });
+            if (!response.ok) {
+                throw new Error('Failed to sign up');
+            }
+            alert ("Signup completed! please login");
+            if (roleValue === 'admin') {
+                window.location.href = "admin-panel.html";
+            } else {
+                window.location.href = "index.html";
+            }
+            myForm.reset();
+        } catch (error) {
+            console.error('Error signing up:', error); 
+        }
+    }
+});
 });

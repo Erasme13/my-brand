@@ -21,6 +21,10 @@ body {
 .contactheader p {
     font-size: 19px;
 }
+.contactheader a {
+    text-decoration: none;
+    color: rgb(100, 150, 170);
+}
 .contactform {
     display: inline-block;
     /* justify-content: center;
@@ -83,7 +87,7 @@ div .mybuttons {
 @media only screen and (min-width: 1024px) {
     .contactheader {
         text-align: center;
-        margin-top: 10%;
+        margin-top: 0;
     }
     .contactform  {
         width: 50%;

@@ -18,8 +18,20 @@ var togglebtn = document.querySelector('.toggle-btn');
 var mymenu = document.querySelector('.mymenu');
 togglebtn.addEventListener('click', () => {
     mymenu.classList.toggle('active');
-});
+});   
+function openNav() {
+    document.getElementById("myNav").style.height = "100%";
+  }
+  function closeNav() {
+    document.getElementById("myNav").style.height = "0%";
+  }
+  
 
+// Hire me button 
+const hireMe = document.getElementById('hireme-btn');
+hireMe.addEventListener('click', () => {
+    window.location.href = 'hire me.html';
+})
 
 
 

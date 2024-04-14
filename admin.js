@@ -69,3 +69,44 @@ function tabs(panelIndex) {
 }
 tabs(0);
 
+// Function to fetch messaged from backend
+
+const fetchMessages = async () => {
+    try {
+        const response = await fetch('/api/messages');
+        if (!response.ok) {
+            throw new Error('Failed to fetch messages');
+        }
+        const messages = await response.json();
+        return messages;
+    } catch (error) {
+        console.error('Error fetching messages:', error);
+        return [];
+    }
+};
+
+const populateTable = async () => {
+    try {
+        const messages = await fetchMessages();
+        const tbody = document.getElementById('msg-body');
+        tbody.innerHTML = ''; // Clear existing table rows
+
+        messages.forEach(message => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${message.firstname}</td>
+                <td>${message.lastname}</td>
+                <td>${message.email}</td>
+                <td>${message.phone}</td>
+                <td>${message.message}</td>
+            `;
+            tbody.appendChild(row);
+        });
+    } catch (error) {
+        console.error('Error populating table with messages:', error);
+    }
+};
+
+// Populate table on page load
+populateTable();
+

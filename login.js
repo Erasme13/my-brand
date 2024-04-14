@@ -1,40 +1,41 @@
-
 document.addEventListener('DOMContentLoaded', function(){
     var myLoginForm = document.getElementById('mylogin-form');
     myLoginForm.addEventListener('submit', function(event){
         event.preventDefault();
-        var username = document.getElementById('username').value;
+        var email = document.getElementById('email').value;
         var password = document.getElementById('password').value;
+        var role = document.getElementById('login-role').value;
         var rememberMe = document.getElementById('remember-me').checked;
-        if (rememberMe) {
-            localStorage.setItem('username', username);
-            localStorage.setItem('password', password);
-        }else {
-            localStorage.removeItem('username');
-            localStorage.removeItem('password');
 
-        }
-        var storedUsers =[];
-        for (let i = 0; i < localStorage.length; i++) {
-            const key = localStorage.key(i);
-            const userData = JSON.parse(localStorage.getItem(key));
-            if (userData && userData.username && userData.password) {
-                storedUsers.push(userData);
+        fetch('/api/users/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                email: email,
+                password: password,
+                role: role,
+                rememberMe: rememberMe
+            })
+        })
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error('Invalid email or password');
             }
-        }
-        var userFound = storedUsers.find(function(user){
-            return user.username === username && user.password === password;
+        })
+        .then(data => {
+            alert('Login successful');
+            if (data.isAdmin) {
+                window.location.href = "admin_panel.html";
+            } else {
+                window.location.href = "index.html";
+            }
+        })
+        .catch(error => {
+            alert('Error: ' + error.message);
         });
-        if (userFound) {
-            alert ('Login successful');
-            window.location.href = "index.html";
-        } else {
-            alert('invalid username or password! please try again.');
-            document.getElementById('username').value = "";
-            document.getElementById('password').value = "";
-            document.getElementById('username').focus();
-        }
     });
 });
-
-

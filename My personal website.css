@@ -98,9 +98,6 @@
     transition: transform 0.3s ease;
     font-size: 2rem;
 }
-.my-social-medias{
-  /* position: absolute; */
-}
 .my-social-medias a i:hover {
     transform: scale(1.1); 
 
@@ -349,27 +346,8 @@ footer {
     50% {left:40%;}
     100% {left:0;}
   }
-  .welcome-text {
-    text-align: center;
-    background-color: wheat;
-  }
-  .blog-section {
-    max-width: 100%;
-    /* margin: 0 auto; */
-    /* margin-top: 10px; */
-    display: grid;
-    grid-template-columns: auto auto;
-    column-gap: 10px;
-     margin-left: 50px;
-    margin-right: 50px;
-    padding-bottom: 50px;
-    row-gap: 10px;
-    /* margin-top: 50px; */
-    background-color: wheat;
-    /* align-items: center; */
 
-    /* column-gap: 10%; */
-  }
+  
   @media screen and (max-width: 768px) {
     .blog-section {
       grid-template-columns: auto;
@@ -452,34 +430,9 @@ footer {
     color: #333;
     font-weight: bold;
   }
-  .blog-container {
-    background-color: wheat;
-  }
+
 
   
-
-  .blog {
-    background-color: white;
-    padding: 20px;
-    /* margin-top: 10px; */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    margin-left: 5px;
-    margin-right: 5px;
-    /* height: 50%; */
-  }
-
-  .blog h2 {
-    font-size: 24px;
-    color: black;
-    margin-bottom: 10px;
-  }
-
-  .blog p {
-    font-size: 16px;
-    color: #666;
-  }
 
   /* My portfolio */
   body {
@@ -535,10 +488,6 @@ footer {
     grid-template-columns: auto auto;
     column-gap: 10px;
     row-gap: 10px;
-  }
-  .projects h2 {
-    /* width: 100%; */
-
   }
   @media screen and (max-width: 768px) {
     .projects {

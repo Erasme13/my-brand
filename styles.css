@@ -11,13 +11,19 @@
     background-size: cover;
     background-position: center;
     width: 100%;
+    overflow: hidden;
 
 
+}
+.myphoto {
+    position: relative;
+    width: 29.5%;
+    left: 0;
+    top: 0;
 }
 #myheader {
     width: 100%;
     height: 100vh;
-    /* background-image: url(COMPUTER.jpg); */
     background-size: cover;
     background-position: center;
     float: right;
@@ -92,6 +98,9 @@ nav ul li a:hover::after {
     font-size: 30px;
     margin-left: 40px;
     margin-right: 0;
+    position: absolute;
+    top: 50px;
+    left: 23%;
 }
 .myhomecontent h1 {
     color: white;
@@ -102,55 +111,137 @@ nav ul li a:hover::after {
     color: white;
 }
 .myhomecontent span {
-    color: blue;
+    color:green;
 }
 .myhomecontent button {
-    background-color: blue;
+    background-image: linear-gradient(blue, yellow, green);
     padding: 10px;
     margin-left: 15%;
     margin-top: 10px;
     border-radius: 10px;
-    color: white;
+    color: black;
     font-size: 2rem;
     font-weight: bold;
     font-family: arial;
+    border: none;
+    cursor: pointer;
+    /* border: solid yellow; */
 
 }
 .myhomecontent button:hover {
 scale: 1.1;
 transition: .5s ease;
+background-image: linear-gradient();
+}
+.myhomecontent .yellow {
+    color: yellow;
+}
+.myhomecontent .blue {
+    color: blue;
+}
+.myhomecontent .green {
+    color: green;
+}
+.myhomecontent i {
+    background-image: linear-gradient(blue,yellow,green);
+    color: blue;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 40px;
 }
 .mymenu {
     display: none;
     right: 2rem;
-    position: absolute;
-    top: 60px;
-    width: 300px;
-    background-color: lightblue;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 0;
+    background-color: rgba(173, 216, 230, .1);
     backdrop-filter: blur(15px);
     border-radius: 10px;
-    overflow: hidden; 
+    overflow-x: hidden; 
+    transition: 0.5s;
+    z-index: 1;
+}
+.overlay-content {
+    position: relative;
+    top: 10%;
+    max-width: 100%;
+    margin-top: 30px;
+    margin-left: 5%;
+    margin-right: 20px;
+    border: solid white;
+    box-shadow: white 0 6px 10px;
+    z-index: 1;
 }
 .mymenu li {
     list-style: none;
     padding: 10px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: baseline;
 }
 .mymenu li a {
     text-decoration: none;
     font-weight: bold;
+    color: white;
+    font-size: 30px;
 }
-.mymenu li a:hover {
+.mymenu li a:hover, .mymenu li a:focus {
     color: white;
     background-color: blue;
 }
-.mymenu .dropdwncontainer {
-    /* width: 100%; */
+.mymenu .closebtn {
+   position: absolute; 
+   font-size: 50px;
+   right: 20px;
+   
 }
+.closebtn {
+    color: white;
+    text-decoration: none;
+}
+.myfooter {
+    width: 100%;
+    padding: 20px;
+    margin-top: 0;
+    box-shadow: white 0px 4px 10px;
+    background-color: black;
+}
+.myfooter p {
+    font-size: 1rem;
+    color: white;
+    text-align: center;
+}
+@media screen and (max-width: 1280px) {
+    .myphoto {
+        width: 30%;
+    }
+}
+@media screen and (max-width: 1030px) {
+    .myphoto {
+        width: 35%;
+    }
+    .myhomecontent {
+        margin-top: 15%;
+        left: 25%;
+        font-size: 2rem;
+    }
+}
+
 /* MOBILE VIEW */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 868px) {
+    .homecontainer {
+        height: 100vh;
+        background-color: black;
+        background-image: url('Dark\ background\ photo.avif');
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+    }
     nav ul li {
         display: block;
     }
@@ -175,39 +266,111 @@ transition: .5s ease;
         display: block;
     }
     .myhomecontent {
-        width: 100%;
-        margin-left: 30px;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 5%;
+        top: 10%;
+        left: 10%;
+        position: absolute;
     }
     .myhomecontent h1 {
         font-size: 40px;
-        margin-top: 20%;
+        margin-top: 10%;
         margin-bottom: 20px;
+        font-weight: bold;
     }
     .myhomecontent p {
-        font-size: 30px;
-        margin-top: 25%;
+        font-size: 40px;
+        margin-top: 10%;
+        margin-left: 0;
+        font-weight: bold;
     }
     .myhomecontent button {
         margin-left: 30%;
         margin-top: 20px;
     }
+    .myphoto {
+        width: 73%;
+        margin-top: 45%;
+    }
 }
 @media screen and (max-width: 390px) {
     .myhomecontent {
-        margin-left: 15px;
-        margin-right: 0;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 5%;
+    }
+    .myhomecontent h1 {
+        font-size: 20px;
+    }
+    .myhomecontent p {
+        font-size: 22px;
+    }
+    .myhomecontent button {
+        margin-left: 20%;
+        padding: 5px;
+    }
+    .myhomecontent span {
+        color: green;
+    }
+    .myphoto {
+        width: 40%;
+        margin-top: 40%;
+    }
+ 
+}
+@media screen and (max-width: 430px) {
+    .myhomecontent {
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 5%;
+        left: 5%;
     }
     .myhomecontent h1 {
         font-size: 30px;
     }
     .myhomecontent p {
-        font-size: 20px;
+        font-size: 22px;
     }
     .myhomecontent button {
         margin-left: 20%;
+        padding: 5px;
     }
-
+    .myhomecontent span {
+        color: green;
+    }
+    .myphoto {
+        width: 95%;
+        margin-top: 70%;
+    }
 }
+@media screen and (max-width: 280px) {
+    .myhomecontent {
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 5%;
+        left: 5%;
+    }
+    .myhomecontent h1 {
+        font-size: 20px;
+    }
+    .myhomecontent p {
+        font-size: 22px;
+    }
+    .myhomecontent button {
+        margin-left: 20%;
+        padding: 5px;
+    }
+    .myhomecontent span {
+        color: green;
+    }
+    .myphoto {
+        width: 100%;
+        margin-top: 70%;
+    }
+}
+
+
 /* My dropdowns */
 /* For smaller screens */
 .dropdwncontainer2 {
@@ -217,7 +380,7 @@ transition: .5s ease;
 .dropdwn-content2 {
     display: none;
     position: absolute;
-    background-color: whitesmoke;
+    background-color: black;
     min-width: 120px;
     box-shadow: 0 2px 5px;
     margin-top: 10px;

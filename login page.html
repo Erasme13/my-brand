@@ -28,35 +28,43 @@
                     <a href="#adminlogin">Admin</a>
                 </div> 
             </div>
-            <div class="toggle-btn">&#9776;</div>
+            <div class="toggle-btn" onclick="openNav()">&#9776;</div>
         </nav>
     </div>
-    <!-- Menu for small screens -->
-    <div class="mymenu">
-        <li><a href="index.html">Home</a></li>
-                <li><a href="contact me.html">Contact me</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="Portfolio page.html">Portfolio</a></li>
-                <li><a href="about.html">About</a></li>
-                <li> <div class="dropdwncontainer2">
-                            <div class="login-image">
-                            <img src="HOZIYANA Erasme-no background.png" alt="user's image">
-                            </div>
-                            <div class="dropdwn-content2" id="dropdown2">
-                                <a href="signup.html">User</a>
-                                <a href="#adminlogin">Admin</a>
-                            </div> 
-                     </div>
-               </li>
+     <!-- Menu for small screens -->
+     <div class="mymenu" id="myNav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <li><a href="index.html">Home</a></li>
+             <li><a href="contact me.html">Contact me</a></li>
+             <li><a href="blog.html">Blog</a></li>
+             <li><a href="Portfolio page.html">Portfolio</a></li>
+             <li><a href="about.html">About</a></li>
+             <li> <div class="dropdwncontainer2">
+                         <div class="login-image">
+                         <img src="HOZIYANA Erasme-no background.png" alt="user's image">
+                         </div>
+                         <div class="dropdwn-content2" id="dropdown2">
+                             <a href="signup.html">Signup</a>
+                             <a href="Admin panel.html">Login</a>
+                         </div> 
+                 </div>
+         </li>
+
+        </div>
     </div>
    
     <div class="mylogin-container">
         <h2>Login</h2><br><br>
         <form id="mylogin-form">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required><br><br><br>
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" required><br><br><br>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required><br><br><br>
+            <select id="login-role">
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+            </select>
             <div>
                 <input type="checkbox" id="remember-me" name="remember-me">
                 <label for="remember-me">Remember me</label><br><br><br>

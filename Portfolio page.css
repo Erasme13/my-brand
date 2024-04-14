@@ -112,19 +112,29 @@ nav ul li a:hover::after {
     padding: 20px;
     font-size: 30px;
 }
+.reachme i:hover {
+    color: skyblue;
+}
 .prt-col-2 {
-    width: 100%;
-    border: solid blue;
-    border-radius: 50%;
+    max-width: 100%;
+    max-height: 100%;
+    border: solid white;
+    border-radius: 10%;
+    margin-left: 10px;
+    margin-right: 10px;
+    box-shadow: white 0px 4px 20px;
+
 }
 .prt-col-2 img {
     object-fit: cover;
-    width: 100%;
-    border-radius: 50%;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10%;
 
 }
 .prt-col-3 {
     width: 100%;
+    /* margin-left: 20px; */
 }
 .prt-col-3 h2 {
     color: blue;
@@ -139,6 +149,17 @@ nav ul li a:hover::after {
 .prt-col-3 li {
     color: white;
     font-size: 35px;
+}
+.myfooter {
+    width: 100%;
+    padding: 20px;
+    margin-top: 2rem;
+    box-shadow: white 0px 4px 10px;
+}
+.myfooter p {
+    font-size: 1.5rem;
+    color: white;
+    text-align: center;
 }
 
 @media only screen and (min-width: 768px) {
@@ -173,14 +194,12 @@ nav ul li a:hover::after {
     .prt-col-2 { 
         width: 50%;
     } 
-    .prt-col-3 {
-        /* border-left: solid blue; */
-    }
+
     .prt-col-3 h2 {
     color: blue;
     font-size: 30px;
     width: 100%;
-    text-align: center;
+    /* text-align: center; */
     margin-top: 10px;
     }
     .prt-col-3 li {

@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BLOG</title>
     <link rel="stylesheet" href="blog.css">
-    <link rel="stylesheet" href="My personal website.css">
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/8ae50477d7.js" crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/8ae50477d7.js" crossorigin="anonymous"></script>
@@ -33,30 +32,34 @@
                <img src="HOZIYANA Erasme-no background.png" alt="user's image">
             </div>
             <div class="dropdwn-content" id="dropdown">
-                <a href="signup.html">User</a>
-                <a href="#adminlogin">Admin</a>
+                <a href="login page.html">Logout</a>
+                <!-- <a href="#adminlogin">Admin</a> -->
             </div> 
         </div>
-        <div class="toggle-btn">&#9776;</div>
+        <div class="toggle-btn" onclick="openNav()">&#9776;</div>
     </nav>
 </div>
-<!-- Menu for small screens -->
-<div class="mymenu">
-    <li><a href="index.html">Home</a></li>
-            <li><a href="contact me.html">Contact me</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="Portfolio page.html">Portfolio</a></li>
-            <li><a href="about.html">About</a></li>
-            <li> <div class="dropdwncontainer2">
-                        <div class="login-image">
-                        <img src="HOZIYANA Erasme-no background.png" alt="user's image">
-                        </div>
-                        <div class="dropdwn-content2" id="dropdown2">
-                            <a href="signup.html">User</a>
-                            <a href="#adminlogin">Admin</a>
-                        </div> 
-                 </div>
-           </li>
+ <!-- Menu for small screens -->
+ <div class="mymenu" id="myNav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+      <li><a href="index.html" style="color: black;">Home</a></li>
+       <li><a href="contact me.html" style="color: black;">Contact me</a></li>
+       <li><a href="blog.html" style="color: black;">Blog</a></li>
+       <li><a href="Portfolio page.html" style="color: black;">Portfolio</a></li>
+       <li><a href="about.html" style="color: black;">About</a></li>
+       <li> <div class="dropdwncontainer2">
+                   <div class="login-image">
+                   <img src="HOZIYANA Erasme-no background.png" alt="user's image">
+                   </div>
+                   <div class="dropdwn-content2" id="dropdown2">
+                       <a href="signup.html">Signup</a>
+                       <a href="Admin panel.html">Login</a>
+                   </div> 
+           </div>
+   </li>
+
+  </div>
 </div>
 
 </div> <div class="blog-container">
@@ -64,39 +67,51 @@
         <h1>Welcome to my blog section</h1>
       </div>
         <div class="blog-section">
+              <div class="blog">
+                <h2 style="border: solid wheat; text-align: center;">Making a school website</h2>
+                <div class="blog-img">
+                  <img src="AI photo.png" alt="blog-img">
+                </div>
+                <p>Welcome to our blog post on the process of creating a school website! In today's digital age, having an online presence for educational institutions is crucial for effective communication, information dissemination, and community engagement. Whether you're a school administrator, teacher, or student embarking on this journey, we've curated essential insights and tips to guide you through the process of making a school website.</p>
+                <div class="blog-comments">
+                  <i class="fa fa-thumbs-up"></i>
+                  <i class="fa fa-comment" onclick="openComments('comment-popup1')"></i>
+                  <i class="fa fa-edit"></i>
+                </div> 
+                <div class="message-popup" id="comment-popup1">
+                  <a href="javascript:void(0)" id="closebtn" onclick="closeComment('comment-popup1')">&times;</a>
+                  <form class="form-container">
+                    <label for="message">Add comment</label><br>
+                    <textarea name="message" placeholder="Type your comment..." required></textarea><br>
+                    <button type="submit">Send <i class="fa fa-paper-plane"></i></button>
+                    
+                  </form>
+                </div>
+              </div>
+
+
             <div class="blog">
               <h2 style="border: solid wheat; text-align: center;">Making a school website</h2>
+              <div class="blog-img">
+                <img src="AI photo.png" alt="blog-img">
+              </div>
               <p>Welcome to our blog post on the process of creating a school website! In today's digital age, having an online presence for educational institutions is crucial for effective communication, information dissemination, and community engagement. Whether you're a school administrator, teacher, or student embarking on this journey, we've curated essential insights and tips to guide you through the process of making a school website.</p>
+              <div class="blog-comments">
+                <i class="fa fa-thumbs-up"></i>
+                <i class="fa fa-comment" onclick="openComments('comment-popup2')"></i>
+                <i class="fa fa-edit"></i>
+              </div> 
+              <div class="message-popup" id="comment-popup2">
+                <a href="javascript:void(0)" id="closebtn" onclick="closeComment('comment-popup2')">&times;</a>
+                <form class="form-container">
+                  <label for="message">Add comment</label><br>
+                  <textarea name="message" placeholder="Type your comment..." required></textarea><br>
+                  <button type="submit">Send <i class="fa fa-paper-plane"></i></button>
+                  
+                </form>
+              </div>
             </div>
-          
-            <div class="blog">
-              <h2>1. Understanding the Purpose</h2>
-              <p>Before diving into the technical aspects, it's essential to clarify the purpose of your school website. Are you aiming to provide information about your school, showcase student achievements, facilitate communication between teachers and parents, or all of the above? Identifying the primary objectives will help shape the design and content of your website.</p>
-            </div>
-          
-            <div class="blog">
-              <h2>2. Choosing a Platform</h2>
-              <p> There are various website-building platforms available, each with its own set of features and customization options. Popular choices include WordPress, Wix, Squarespace, and custom development using HTML/CSS/JavaScript. Evaluate the pros and cons of each platform based on your requirements before making a decision.</p>
-            </div>
-            <div class="blog">
-              <h2>3. Designing the Interface</h2>
-              <p>The design of your school website should be visually appealing, user-friendly, and reflective of your institution's branding. Choose a clean layout, intuitive navigation menus, and high-quality images to enhance the overall aesthetic appeal.</p>
-            </div>
-            <div class="blog">
-              <h2>4. Creating Compelling Content</h2>
-              <p>Content is king when it comes to engaging website visitors. Ensure that your website provides relevant and informative content, including school announcements, event calendars, curriculum details, faculty bios, student testimonials, and blog posts. Regularly update the content to keep it fresh and engaging.</p>
-            </div>
-            <div class="blog">
-              <h2>5. Integrating Multimedia Elements</h2>
-              <p>Enhance the user experience by incorporating multimedia elements such as videos, photo galleries, interactive maps, and virtual tours. These elements can provide a more immersive experience for visitors and showcase the unique aspects of your school community.</p>
-            </div>
-            <div class="blog">
-              <h2>6. Ensuring Accessibility and Responsiveness</h2>
-              <p>Accessibility and responsiveness are critical considerations for ensuring that your website is usable by all visitors, including those with disabilities and those accessing it from mobile devices. Follow web accessibility guidelines and test your website across different screen sizes and devices to ensure compatibility.</p>
-            </div>
-            <div class="blog">
-              <h2>7. Planning and Organization</h2>
-              <p>Start by outlining the structure of your website. Consider what pages you'll need, such as Home, About Us, Academics, Admissions, Faculty, Events, and Contact. Organize the content logically to ensure ease of navigation for visitors.</p>
+            
             </div>
           </div>
    </div>
@@ -112,6 +127,15 @@
     </div>
   </footer>
 
-    <script src="scripts.js"></script>
+    <script>
+      function openComments(popupId) {
+    document.getElementById(popupId).style.display = "block";
+  }
+
+  function closeComment(popupId) {
+    document.getElementById(popupId).style.display= "none";
+  }
+
+    </script>
 </body>
 </html>
