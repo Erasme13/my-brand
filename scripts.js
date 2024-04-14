@@ -33,5 +33,14 @@ hireMe.addEventListener('click', () => {
     window.location.href = 'hire me.html';
 })
 
+// blogs comments popup
+function openComments(popupId) {
+    document.getElementById(popupId).style.display = "block";
+  }
+
+  function closeComment(popupId) {
+    document.getElementById(popupId).style.display= "none";
+  }
+
 
 
