@@ -4,7 +4,6 @@ const contact = async (event) => {
   try {
     event.preventDefault();
 
-    // Your form data
     const firstName = document.querySelector("#firstname").value;
     const lastName = document.querySelector("#lastname").value;
     const email = document.querySelector("#email").value;
