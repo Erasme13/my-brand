@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function(){
         var role = document.getElementById('login-role').value;
         var rememberMe = document.getElementById('remember-me').checked;
 
-        axios.post('http://localhost:3000/api/users/login', {
+        axios.post('https://my-brand-backend-5-pk68.onrender.com/api/users/login', {
             email: email,
             password: password,
             role: role,
