@@ -70,40 +70,40 @@ function tabs(panelIndex) {
 tabs(0);
 
 // Function to fetch messages from backend using Axios
-const fetchMessages = async () => {
-    try {
-        const response = await axios.get('http://localhost:3000/api/messages');
-        if (!response.data) {
-            throw new Error('Failed to fetch messages');
-        }
-        return response.data;
-    } catch (error) {
-        console.error('Error fetching messages:', error);
-        return [];
-    }
-};
+// const fetchMessages = async () => {
+//     try {
+//         const response = await axios.get('https://my-brand-backend-5-pk68.onrender.com/api/messages');
+//         if (!response.data) {
+//             throw new Error('Failed to fetch messages');
+//         }
+//         return response.data;
+//     } catch (error) {
+//         console.error('Error fetching messages:', error);
+//         return [];
+//     }
+// };
 
-const populateTable = async () => {
-    try {
-        const messages = await fetchMessages();
-        const tbody = document.getElementById('msg-body');
-        tbody.innerHTML = '';
+// const populateTable = async () => {
+//     try {
+//         const messages = await fetchMessages();
+//         const tbody = document.getElementById('msg-body');
+//         tbody.innerHTML = '';
 
-        messages.forEach(message => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${message.firstname}</td>
-                <td>${message.lastname}</td>
-                <td>${message.email}</td>
-                <td>${message.phone}</td>
-                <td>${message.message}</td>
-            `;
-            tbody.appendChild(row);
-        });
-    } catch (error) {
-        console.error('Error populating table with messages:', error);
-    }
-};
+//         messages.forEach(message => {
+//             const row = document.createElement('tr');
+//             row.innerHTML = `
+//                 <td>${message.firstname}</td>
+//                 <td>${message.lastname}</td>
+//                 <td>${message.email}</td>
+//                 <td>${message.phone}</td>
+//                 <td>${message.message}</td>
+//             `;
+//             tbody.appendChild(row);
+//         });
+//     } catch (error) {
+//         console.error('Error populating table with messages:', error);
+//     }
+// };
 
-// Populate table on page load
-populateTable();
+// // Populate table on page load
+// populateTable();
