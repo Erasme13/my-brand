@@ -69,6 +69,17 @@ div .mybuttons {
     border-radius: 5px;
     margin-right: 25px;
 }
+.submit-error {
+    margin-top: 10px;
+    color: red;
+    font-size: 1.5rem;
+    
+}
+.submit-success {
+    color: green;
+    font-size: 1.5rem;
+    text-align: center;
+}
 @media only screen and (min-width: 768px) {
     .contactform {
         max-width: 100%;

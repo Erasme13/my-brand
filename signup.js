@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function(){
     let email = document.getElementById('email');
     let password = document.getElementById('password');
     let password2 = document.getElementById('password2');
-    let signupRole = document.getElementById('signup-role');
 
     
     const setError = (el, message) => {
@@ -97,9 +96,8 @@ document.addEventListener('DOMContentLoaded', function(){
         const emailValue = email.value.trim();
         const passwordValue = password.value.trim();
         const password2Value = password2.value.trim();
-        const roleValue = signupRole.value;
            if (validateInputs(usernameValue, emailValue, passwordValue, password2Value)) {
-        const userData = {username: usernameValue, email: emailValue, password: passwordValue, role: roleValue};
+        const userData = {username: usernameValue, email: emailValue, password: passwordValue};
         try {
             const response = await fetch('/api/signup', {
                 method: 'POST',

@@ -7,21 +7,15 @@ document.addEventListener('DOMContentLoaded', function(){
         var role = document.getElementById('login-role').value;
         var rememberMe = document.getElementById('remember-me').checked;
 
-        fetch('http://localhost:3000/api/users/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                email: email,
-                password: password,
-                role: role,
-                rememberMe: rememberMe
-            })
+        axios.post('http://localhost:3000/api/users/login', {
+            email: email,
+            password: password,
+            role: role,
+            rememberMe: rememberMe
         })
         .then(response => {
-            if (response.ok) {
-                return response.json();
+            if (response.status === 200) {
+                return response.data;
             } else {
                 throw new Error('Invalid email or password');
             }
