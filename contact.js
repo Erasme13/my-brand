@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log(response.statusText);
         resetForm();
         // Populate table with the new message
-        // addMessageToTable(firstName, lastName, email, phone, message, 'msg-body');
+        addMessageToTable(firstName, lastName, email, phone, message, 'msg-body');
       } else {
         submitError.innerHTML = "Failed to send message. Please try again.";
         console.error("Failed to send message:", response.statusText);
@@ -46,23 +46,23 @@ document.addEventListener("DOMContentLoaded", function() {
     submitError.innerHTML = "";
   };
 
-  // const addMessageToTable = (firstName, lastName, email, phone, message, tableBodyId) => {
-  //   const messagesTableBody = document.getElementById(tableBodyId);
-  //   if (!messagesTableBody) {
-  //     console.error("Messages table body not found");
-  //     return;
-  //   }
+  const addMessageToTable = (firstName, lastName, email, phone, message, tableBodyId) => {
+    const messagesTableBody = document.getElementById(tableBodyId);
+    if (!messagesTableBody) {
+      console.error("Messages table body not found");
+      return;
+    }
 
-  //   const newRow = document.createElement("tr");
-  //   newRow.innerHTML = `
-  //     <td>${firstName}</td>
-  //     <td>${lastName}</td>
-  //     <td>${email}</td>
-  //     <td>${phone}</td>
-  //     <td>${message}</td>
-  //   `;
-  //   messagesTableBody.appendChild(newRow);
-  // };
+    const newRow = document.createElement("tr");
+    newRow.innerHTML = `
+      <td>${firstName}</td>
+      <td>${lastName}</td>
+      <td>${email}</td>
+      <td>${phone}</td>
+      <td>${message}</td>
+    `;
+    messagesTableBody.appendChild(newRow);
+  };
 
   form.addEventListener("submit", contact);
 });
