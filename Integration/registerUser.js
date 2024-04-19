@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function(){
             };
 
             try {
-                const response = await axios.post('https://my-brand-backend-5-pk68.onrender.com/api/users/signup', userData, {
+                const response = await axios.post('http://localhost:3000/api/users/signup', userData, {
                     headers: {
                         'Content-Type': 'application/json'
                     }

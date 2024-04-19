@@ -1,43 +1,52 @@
-const serverURL = "https://my-brand-backend-5-pk68.onrender.com/api/addmessage";
+document.addEventListener('DOMContentLoaded', function () {
+  const contactForm = document.getElementById('message-form');
 
-const contact = async (event) => {
-  try {
-    event.preventDefault();
+  // Add event listener to form submission
+  contactForm.addEventListener('submit', function (event) {
+      event.preventDefault();
 
-    const firstName = document.querySelector("#firstname").value;
-    const lastName = document.querySelector("#lastname").value;
-    const email = document.querySelector("#email").value;
-    const phone = document.querySelector("#phone").value;
-    const message = document.querySelector("#message").value;
+      // Get form data
+      const firstNameInput = document.getElementById('firstname').value;
+      const lastNameInput = document.getElementById('lastname').value;
+      const emailInput = document.getElementById('email').value;
+      const phoneInput = document.getElementById('phone').value;
+      const messageInput = document.getElementById('message').value;
 
-    const data = {
-      firstname: firstName,
-      lastname: lastName,
-      email: email,
-      phone: phone,
-      message: message,
-    };
+      // Construct message object
+      const messageData = {
+          firstname: firstNameInput,
+          lastname: lastNameInput,
+          email: emailInput,
+          phone: phoneInput,
+          message: messageInput
+      };
 
-    // Send data to the live server
-    const response = await axios.post(`https://my-brand-backend-5-pk68.onrender.com`, data);
-
-    if (response.status === 201) {
-      console.log(response.data.message);
-      submitSuccess.innerHTML = response.data.message;
-      resetForm();
-      document.querySelector('.submit-success').style.display = 'block';
-      next();
-    } else {
-      submitError.innerHTML = response.data.error;
-      console.error(response.data.error);
-    }
-  } catch (error) {
-    console.error("Error sending message", error);
-    if (error.response && error.response.data && error.response.data.error) {
-      submitError.style.color = "#E87B7B";
-      submitError.innerHTML = error.response.data.error;
-    } else {
-      submitError.innerHTML = "An unexpected error occurred.";
-    }
-  }
-};
+      // Send POST request to backend
+      fetch('http://localhost:3000/api/addmessage', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(messageData)
+      })
+      .then(response => {
+          if (response.ok) {
+              // Reset form on successful submission
+              contactForm.reset();
+              // Display success message
+              const successMessage = document.querySelector('.submit-success');
+              successMessage.textContent = 'Message sent successfully!';
+          } else {
+              // Display error message
+              const errorMessage = document.querySelector('.submit-error');
+              errorMessage.textContent = 'Failed to submit form. Please try again later.';
+          }
+      })
+      .catch(error => {
+          console.error('Error:', error);
+          // Display error message
+          const errorMessage = document.querySelector('.submit-error');
+          errorMessage.textContent = 'An error occurred while submitting the form.';
+      });
+  });
+});

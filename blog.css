@@ -176,6 +176,13 @@ nav ul li a:hover::after {
   #closebtn:hover {
     color: red;
   }
+  .addblog-btn {
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
 
 
 

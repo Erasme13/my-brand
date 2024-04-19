@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
         message: message,
       };
 
-      const response = await axios.post("https://my-brand-backend-5-pk68.onrender.com/api/addmessage", data);
+      const response = await axios.post("http://localhost:3000/api/addmessage", data);
 
       if (response.status === 201) {
         console.log(response.statusText);

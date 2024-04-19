@@ -65,15 +65,16 @@
 </div> <div class="blog-container">
      <div class="welcome-text">
         <h1>Welcome to my blog section</h1>
+        <button class="addblog-btn" id="add-blog">Create a blog <i class="fa fa-plus"></i></button>
       </div>
         <div class="blog-section">
-              <div class="blog">
+              <div class="blog" id="blog1" onclick="openBlog('blog1')">
                 <h2 style="border: solid wheat; text-align: center;">Making a school website</h2>
                 <div class="blog-img">
                   <img src="AI photo.png" alt="blog-img">
                 </div>
                 <p>Welcome to our blog post on the process of creating a school website! In today's digital age, having an online presence for educational institutions is crucial for effective communication, information dissemination, and community engagement. Whether you're a school administrator, teacher, or student embarking on this journey, we've curated essential insights and tips to guide you through the process of making a school website.</p>
-                <div class="blog-comments">
+                <div class="blog-comments"  id="comments-blog1">
                   <i class="fa fa-thumbs-up"></i>
                   <i class="fa fa-comment" onclick="openComments('comment-popup1')"></i>
                   <i class="fa fa-edit"></i>
@@ -83,33 +84,33 @@
                   <form class="form-container">
                     <label for="message">Add comment</label><br>
                     <textarea name="message" placeholder="Type your comment..." required></textarea><br>
-                    <button type="submit">Send <i class="fa fa-paper-plane"></i></button>
+                    <button type="submit">Send<i class="fa fa-paper-plane"></i></button>
                     
                   </form>
                 </div>
               </div>
 
 
-            <div class="blog">
+            <div class="blog" id="blog2" onclick="openBlog('blog2')">
               <h2 style="border: solid wheat; text-align: center;">Making a school website</h2>
               <div class="blog-img">
                 <img src="AI photo.png" alt="blog-img">
               </div>
               <p>Welcome to our blog post on the process of creating a school website! In today's digital age, having an online presence for educational institutions is crucial for effective communication, information dissemination, and community engagement. Whether you're a school administrator, teacher, or student embarking on this journey, we've curated essential insights and tips to guide you through the process of making a school website.</p>
-              <div class="blog-comments">
+              <div class="blog-comments" id="comments-blog1">
                 <i class="fa fa-thumbs-up"></i>
                 <i class="fa fa-comment" onclick="openComments('comment-popup2')"></i>
                 <i class="fa fa-edit"></i>
               </div> 
               <div class="message-popup" id="comment-popup2">
-                <a href="javascript:void(0)" id="closebtn" onclick="closeComment('comment-popup2')">&times;</a>
+                <!-- <a href="javascript:void(0)" id="closebtn" onclick="closeComment('comment-popup2')">&times;</a>
                 <form class="form-container">
                   <label for="message">Add comment</label><br>
                   <textarea name="message" placeholder="Type your comment..." required></textarea><br>
                   <button type="submit">Send <i class="fa fa-paper-plane"></i></button>
                   
                 </form>
-              </div>
+              </div> -->
             </div>
             
             </div>

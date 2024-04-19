@@ -187,7 +187,6 @@
     color: black;
 }
 .messages {
-    /* display: none; */
     width: 99%;
     padding: 30px;
     background-color: whitesmoke;
@@ -196,9 +195,6 @@
     margin-top: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     
-}
-#customers-msg td {
-    display: none;
 }
 #customers-msg {
     border-collapse: collapse;
@@ -210,18 +206,33 @@
 }
 #customers-msg th {
     text-align: left;
-    background-color: yellowgreen;
-    color: #ffff;
+    background-color: lightblue;
+    color: black;
     font-size: 1.5rem;
 }
 .Users-info {
     /* display: none; */
-    width: 40%;
+    width: 100%;
     padding: 30px;
     background-color: whitesmoke;
     height: auto;
     margin-top: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+#reg-users {
+    border-collapse: collapse;
+    width: 100%;
+}
+#reg-users td, #reg-users th {
+    border: 2px solid blue;
+    padding: 20px;
+
+}
+#reg-users th {
+    text-align: left;
+    background-color: lightblue;
+    color: black;
+    font-size: 1.5rem;
 }
 .settings {
     width: 40%;

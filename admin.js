@@ -69,41 +69,87 @@ function tabs(panelIndex) {
 }
 tabs(0);
 
-// Function to fetch messages from backend using Axios
-const fetchMessages = async () => {
-    try {
-        const response = await axios.get('https://my-brand-backend-5-pk68.onrender.com/api/messages');
-        if (!response.data) {
-            throw new Error('Failed to fetch messages');
-        }
-        return response.data;
-    } catch (error) {
-        console.error('Error fetching messages:', error);
-        return [];
+document.addEventListener('DOMContentLoaded', function () {
+    // Function to fetch messages from the server
+    function fetchMessages() {
+        fetch('http://localhost:3000/api/messages')
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error('Failed to fetch messages');
+                }
+            })
+            .then(data => {
+                // Clear existing table rows
+                const msgBody = document.getElementById('msg-body');
+                msgBody.innerHTML = '';
+
+                // Populate table with fetched messages
+                data.forEach(message => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${message.firstname}</td>
+                        <td>${message.lastname}</td>
+                        <td>${message.email}</td>
+                        <td>${message.phone}</td>
+                        <td>${message.message}</td>
+                    `;
+                    msgBody.appendChild(row);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching messages:', error);
+                // Display error message
+                const errorMessage = document.querySelector('.messages .error-message');
+                errorMessage.textContent = 'An error occurred while fetching messages.';
+            });
     }
-};
 
-const populateTable = async () => {
-    try {
-        const messages = await fetchMessages();
-        const tbody = document.getElementById('msg-body');
-        tbody.innerHTML = '';
+    // Call fetchMessages function when the DOM content is loaded
+    fetchMessages();
+});
 
-        messages.forEach(message => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${message.firstname}</td>
-                <td>${message.lastname}</td>
-                <td>${message.email}</td>
-                <td>${message.phone}</td>
-                <td>${message.message}</td>
-            `;
-            tbody.appendChild(row);
-        });
-    } catch (error) {
-        console.error('Error populating table with messages:', error);
+// Fetching users 
+document.addEventListener('DOMContentLoaded', function () {
+    // Function to fetch users from the server
+    function fetchUsers() {
+        fetch('http://localhost:3000/api/users')
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error('Failed to fetch users');
+                }
+            })
+            .then(data => {
+                // Clear existing table rows
+                const usersBody = document.getElementById('user-body');
+                usersBody.innerHTML = '';
+
+                // Populate table with fetched users
+                data.forEach(user => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${user._id}</td>
+                        <td>${user.username}</td>
+                        <td>${user.email}</td>
+                        <td>${user.role}</td>
+                    `;
+                    usersBody.appendChild(row);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching users:', error);
+                // Display error message
+                const errorMessage = document.querySelector('.error-message');
+                errorMessage.textContent = 'An error occurred while fetching users.';
+            });
     }
-};
 
-// Populate table on page load
-populateTable();
+    // Call fetchUsers function when the DOM content is loaded
+    fetchUsers();
+});
+
+
+
