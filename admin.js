@@ -72,7 +72,7 @@ tabs(0);
 document.addEventListener('DOMContentLoaded', function () {
     // Function to fetch messages from the server
     function fetchMessages() {
-        fetch('http://localhost:3000/api/messages')
+        fetch('https://my-brand-backend-5-pk68.onrender.com/api/messages')
             .then(response => {
                 if (response.ok) {
                     return response.json();
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
     // Function to fetch users from the server
     function fetchUsers() {
-        fetch('http://localhost:3000/api/users')
+        fetch('https://my-brand-backend-5-pk68.onrender.com/api/users')
             .then(response => {
                 if (response.ok) {
                     return response.json();

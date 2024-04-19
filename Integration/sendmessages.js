@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
       };
 
       // Send POST request to backend
-      fetch('http://localhost:3000/api/addmessage', {
+      fetch('https://my-brand-backend-5-pk68.onrender.com/api/addmessage', {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json'
