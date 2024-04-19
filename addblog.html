@@ -43,6 +43,7 @@
     </style>
 </head>
 <body>
+    <!-- <a href="index.html"><i class="fa fa-home" style="margin-left: 20%;"></i></a>
     <div>
         <h2>Creating a blog</h2>
     </div>
@@ -61,6 +62,79 @@
 
 
     </div>
-    
+     -->
+     <a href="blog.html"><i class="fa fa-home" style="margin-left: 20%;"></i></a>
+     <div>
+         <h2>Creating a blog</h2>
+     </div>
+     <div class="create-container">
+         <form id="blog-form">
+             <label for="title">Title</label>
+             <input type="text" id="title" placeholder="Add blog title"><br><br>
+             <label for="photo">Photo</label>
+             <input type="text" id="photo" placeholder="Add pic's URL"><br><br>
+             <label for="content">Content</label>
+             <textarea id="content" name="content" cols="30" rows="10" placeholder="Add blog content"></textarea><br><br>
+             <button type="button" id="add-btn">Add a blog <i class="fa fa-plus"></i></button>
+         </form>
+     </div>
+ 
+     <script>
+      // Function to send blog data to server
+document.getElementById("add-btn").addEventListener("click", function() {
+    var title = document.getElementById("title").value;
+    var photo = document.getElementById("photo").value;
+    var content = document.getElementById("content").value;
+
+    // Create blog data object
+    var blogData = {
+        title: title,
+        photo: photo,
+        content: content
+    };
+
+    // Retrieve token from session storage
+    var token = sessionStorage.getItem('token');
+
+    // Send blog data to server
+    fetch('https://my-brand-backend-5-pk68.onrender.com/api/addblog', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            // Include authorization token if available
+            'Authorization': 'Bearer ' + token
+        },
+        body: JSON.stringify(blogData)
+    })
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        } else if (response.status === 403) {
+            throw new Error('Unauthorized');
+        } else {
+            throw new Error('Failed to add blog');
+        }
+    })
+    .then(data => {
+        console.log(data);
+        alert(data.message); 
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        if (error.message === 'Unauthorized') {
+            alert('You are not authorized to add a blog.'); 
+        } else {
+            alert('An error occurred while adding the blog. Please try again.');
+        }
+    });
+
+    // Reset form fields
+    document.getElementById("title").value = "";
+    document.getElementById("photo").value = "";
+    document.getElementById("content").value = "";
+});
+
+     </script>
+
 </body>
 </html>

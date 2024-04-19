@@ -62,10 +62,12 @@
   </div>
 </div>
 
-</div> <div class="blog-container">
+ </div>
+ <!--
+   <div class="blog-container">
      <div class="welcome-text">
         <h1>Welcome to my blog section</h1>
-        <button class="addblog-btn" id="add-blog">Create a blog <i class="fa fa-plus"></i></button>
+        <button class="addblog-btn" id="add-blog" style="display: none;">Create a blog <i class="fa fa-plus"></i></button>
       </div>
         <div class="blog-section">
               <div class="blog" id="blog1" onclick="openBlog('blog1')">
@@ -103,31 +105,86 @@
                 <i class="fa fa-edit"></i>
               </div> 
               <div class="message-popup" id="comment-popup2">
-                <!-- <a href="javascript:void(0)" id="closebtn" onclick="closeComment('comment-popup2')">&times;</a>
-                <form class="form-container">
-                  <label for="message">Add comment</label><br>
-                  <textarea name="message" placeholder="Type your comment..." required></textarea><br>
-                  <button type="submit">Send <i class="fa fa-paper-plane"></i></button>
-                  
-                </form>
-              </div> -->
             </div>
             
             </div>
           </div>
-   </div>
+   </div> -->
 
-
-
-
-
-
-   <footer>
-    <div class="footer-container">
-      <p>&copy; 2024 HOZIYANA Erasme. All rights reserved.</p>
+   <div class="blog-container">
+    <div class="welcome-text">
+        <h1>Welcome to my blog section</h1>
+        <button class="addblog-btn" id="add-blog" onclick="showAddBlogForm()">Create a blog <i class="fa fa-plus"></i></button>
     </div>
-  </footer>
+    <div class="blog-section" id="blog-section">
+        <!-- Blogs will be dynamically added here -->
+    </div>
+</div>
 
-    <script src="scripts.js"></script>
+<footer>
+    <div class="footer-container">
+        <p>&copy; 2024 HOZIYANA Erasme. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- Script to handle showing add blog form -->
+<script>
+    function showAddBlogForm() {
+        window.location.href = "addblog.html";
+    }
+</script>
+
+<!-- Script to fetch blogs from the server and display them -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        fetch('https://my-brand-backend-5-pk68.onrender.com/api/blogs')
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(blog => {
+                    displayBlog(blog);
+                });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    });
+
+    function displayBlog(blog) {
+        var blogSection = document.getElementById("blog-section");
+        var newBlog = document.createElement("div");
+        newBlog.classList.add("blog");
+        newBlog.innerHTML = `
+            <h2 style="border: solid wheat; text-align: center;">${blog.title}</h2>
+            <div class="blog-img">
+                <img src="${blog.photo}" alt="blog-img">
+            </div>
+            <p>${blog.content}</p>
+            <div class="blog-comments">
+                <i class="fa fa-thumbs-up"></i>
+                <i class="fa fa-comment" onclick="openComments('comment-popup${blog._id}')"></i>
+                <i class="fa fa-edit"></i>
+            </div>
+            <div class="message-popup" id="comment-popup${blog._id}">
+                <a href="javascript:void(0)" id="closebtn" onclick="closeComment('comment-popup${blog._id}')">&times;</a>
+                <form class="form-container">
+                    <label for="message">Add comment</label><br>
+                    <textarea name="message" placeholder="Type your comment..." required></textarea><br>
+                    <button type="submit">Send<i class="fa fa-paper-plane"></i></button>
+                </form>
+            </div>
+        `;
+        blogSection.appendChild(newBlog);
+    }
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+             var isAdmin = false;
+             if (!isAdmin) {
+                 document.getElementById("add-blog").style.display = "none";
+             }
+         });
+</script>
+<script src="scripts.js"></script>
 </body>
 </html>

@@ -33,12 +33,6 @@ hireMe.addEventListener('click', () => {
     window.location.href = 'hire me.html';
 });
 
-// add a blog 
-const addBlog =document.getElementById('add-blog');
-addBlog.addEventListener('click', ()=> {
-  window.location.href ='adblog.html';
-})
-
 // blogs comments popup
 function openComments(popupId) {
     document.getElementById(popupId).style.display = "block";
