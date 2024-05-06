@@ -183,6 +183,23 @@ nav ul li a:hover::after {
     font-size: 1.2rem;
     font-weight: bold;
   }
+  .addblog-btn:hover {
+    color: white;
+    background-color: black;
+  }
+
+  .submit-error {
+    margin-top: 10px;
+    color: red;
+    font-size: 1rem;
+    
+}
+.submit-success {
+    color: green;
+    font-size: 1rem;
+    text-align: center;
+}
+
 
 
 

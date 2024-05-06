@@ -43,6 +43,12 @@
                 </li>
                 <li>
                     <a onclick="tabs(4)" class="tab">
+                        <i class="fa fa-plus"></i>
+                        <span>Add blog</span>
+                    </a>
+                </li>
+                <li>
+                    <a onclick="tabs(5)" class="tab">
                         <i class="fa fa-cog"></i>
                         <span>Settings</span>
                     </a>
@@ -130,6 +136,24 @@
                             
                         </tbody>
                     </table>
+                </div>
+                <div class="add-blog tab-panel">
+                    <div>
+                        <h2>Creating a blog</h2>
+                    </div>
+                    <div class="create-container">
+                        <form id="blog-form">
+                            <label for="title">Title</label>
+                            <input type="text" id="title" placeholder="Add blog title"><br><br>
+                            <label for="photo">Photo</label>
+                            <input type="text" id="photo" placeholder="Add pic's URL"><br><br>
+                            <label for="content">Content</label>
+                            <textarea id="content" name="content" cols="30" rows="10" placeholder="Add blog content"></textarea><br><br>
+                            <button type="button" id="add-btn">Add a blog <i class="fa fa-plus"></i></button>
+                        </form>
+                    </div>
+                
+
                 </div>
                 <div class="settings tab-panel">
                     <h1>Privacy settings</h1>

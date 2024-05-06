@@ -5,7 +5,7 @@ async function openComments(blogId) {
 
     try {
         // Fetch comments for the blog from the server
-        const response = await fetch(`http://localhost:3000/api/blogs/${blogId}/comments`);
+        const response = await fetch(`https://my-brand-backend-5-pk68.onrender.com/api/blogs/${blogId}/comments`);
         const comments = await response.json();
 
         // Clear previous comments

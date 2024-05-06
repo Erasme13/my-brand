@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login page</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <link rel="stylesheet" href="login page.css">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -62,16 +63,14 @@
             <input type="text" id="email" name="email" required><br><br><br>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required><br><br><br>
-            <select id="login-role">
-                <option value="user">User</option>
-                <option value="admin">Admin</option>
-            </select>
             <div>
                 <input type="checkbox" id="remember-me" name="remember-me">
                 <label for="remember-me">Remember me</label><br><br><br>
             </div>
             <button type="submit">Submit</button><br>
         </form>
+        <div class="submit-error"></div>
+        <div class="submit-success"></div>
     </div>
     <div class="no-account">
         <p>Don't have an account? <a href="signup.html">Sign up</a></p>
@@ -82,6 +81,6 @@
 
     <!-- <script src="login.js"></script> -->
     <script src="scripts.js"></script>
-    <script src="Integration/loginUser.js"></script>
+    <script src="./Integration/loginUser.js"></script>
 </body>
 </html>

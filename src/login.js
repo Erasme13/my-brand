@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function(){
         var role = document.getElementById('login-role').value;
         var rememberMe = document.getElementById('remember-me').checked;
 
-        fetch('http://localhost:3000/api/users/login', {
+        fetch('https://my-brand-backend-5-pk68.onrender.com/api/users/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

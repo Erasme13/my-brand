@@ -151,5 +151,57 @@ document.addEventListener('DOMContentLoaded', function () {
     fetchUsers();
 });
 
+// Adding blog
+
+document.getElementById("add-btn").addEventListener("click", function() {
+    var title = document.getElementById("title").value;
+    var photo = document.getElementById("photo").value;
+    var content = document.getElementById("content").value;
+
+    var blogData = {
+        title: title,
+        photo: photo,
+        content: content
+    };
+
+    var token = sessionStorage.getItem('userToken');
+    var isAdmin = sessionStorage.getItem('isAdmin');
+
+    console.log("isAdmin:", isAdmin); 
+
+    // Check if isAdmin is 'true' (string) or true (boolean)
+    if (isAdmin === 'true' || isAdmin === true) {
+        fetch('https://my-brand-backend-5-pk68.onrender.com/api/addblog', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + token
+            },
+            body: JSON.stringify(blogData)
+        })
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error('Failed to add blog');
+            }
+        })
+        .then(data => {
+            console.log(data);
+            alert(data.message); 
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred while adding the blog. Please try again.');
+        });
+
+        document.getElementById("title").value = "";
+        document.getElementById("photo").value = "";
+        document.getElementById("content").value = "";
+    } else {
+        alert('You are not authorized to add a blog.');
+    }
+});
+
 
 
